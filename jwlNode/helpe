@@ -1,0 +1,12 @@
+1 instalação 
+
+init
+express
+nodemon
+
+mysql2 (obs; lembrando de configurar o arquivo bin. copiando para variavel de ambiente)
+logar no mysql -> mysql -h localhost -u root -p
+npm install --save mysql2
+
+sequelize
+handlebars

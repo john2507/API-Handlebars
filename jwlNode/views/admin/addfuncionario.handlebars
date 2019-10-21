@@ -1,0 +1,103 @@
+{{#each erros}}
+<div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+<br>
+<h3>Cadastro de Funcionario</h3>
+<a href="/admin/funcionario"><button type="button" class="btn btn-success">Listar</button></a>
+<a href="/admin"><button type="button" class="btn btn-success">Retornar</button></a>
+
+<form method="POST" action="/admin/funcionario/novo">
+   <div class="form-row">
+    <div class="form-group col-md-8">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" class="form-control" id="nome" placeholder="Informe seu Nome">
+  </div>
+  <div class="form-group col-md-4">
+      <label for="sexo">sexo</label>
+      <input type="sexo" name="sexo" class="form-control" id="sexo">
+  </div>
+   </div>
+  <div class="form-row">
+   <div class="form-group col-md-4">
+      <label for="cpf">CPF</label>
+        <input type="cpf" name="cpf" class="form-control" id="cpf">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="matricula">Matricula</label>
+        <input type="matricula" name="matricula" class="form-control" id="matricula">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="ctps">CTPS</label>
+      <input type="ctps" name="ctps" class="form-control" id="ctps">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="endereco">Endereco</label>
+      <input type="endereco" name="endereco" class="form-control" id="endereco">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="cidade">Cidade</label>
+        <input type="cidade" name="cidade" class="form-control" id="cidade">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="numero">Numero</label>
+      <input type="numero" name="numero" class="form-control" id="numero">
+    </div>
+  </div>
+
+ <div class="form-row">
+    <div class="form-group col-md-8">
+    <label for="bairro">Bairro</label>
+    <input type="bairro" name="bairro" class="form-control" id="bairro" placeholder="Informe seu Nome">
+  </div>
+  <div class="form-group col-md-4">
+      <label for="cep">Cep</label>
+      <input type="cep" name="cep" class="form-control" id="cep">
+  </div>
+   </div>
+  
+<div class="form-row">
+  
+    <div class="form-group col-md-4">
+        
+        <label for="descricao">Setor</label>
+        <select id="descricao" name="descricao" class="custom-select">
+            {{#each listar}}
+            <option value="{{id}}">{{descricao}}</option>
+            {{else}}
+            <option value="{{0}}">nehhuma </option>
+            {{/each}}
+        </select> 
+      
+    </div>
+     <div class="form-group col-md-4">
+         <label type="setor">Usuario</label>
+            <select name="setor" class="custom-select">
+                    {{#each listar}}
+                    <option value="{{id}}">{{descricao}}</option>
+                    {{else}}
+                    <option value="">nehhuma </option>
+                    {{/each}}
+            </select> 
+    </div>
+     <div class="form-group col-md-4">
+         <label type="categoria">Funcao</label>
+            <select name="categoria" class="custom-select">
+                    {{#each categorias}}
+                    <option value="{{id}}">{{nome}}</option>
+                    {{else}}
+                    <option value="">nehhuma </option>
+                    {{/each}}
+            </select> 
+    </div>
+</div>
+<br>
+  
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+<br><br>
+<br><br>
+</form>
