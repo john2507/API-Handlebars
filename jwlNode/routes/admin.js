@@ -128,7 +128,7 @@ router.post('/setor/add', function(req,res){
     ////////CADSATRAR FUNCIONARIO NO BANCO////////////
 
     router.post('/funcionario/novo', function(req,res) {
-        
+        console.log('criando funcionario')
         var erros =[]
 
          if (req.body.descricao == "0"){
@@ -138,7 +138,7 @@ router.post('/setor/add', function(req,res){
             res.render("./admin/addfuncionario",{erros:erros})
         }else{
             CadFuncionario.create({
-                // nome        : req.body.nome,
+                nome        : req.body.nome,
                 //  sexo        : req.body.sexo,
                 // cpf         : req.body.cpf,
                 // matricula   : req.body.matricula,
@@ -148,7 +148,7 @@ router.post('/setor/add', function(req,res){
                 //  cidade      : req.body.cidade,
                 //  bairro      : req.body.bairro,
                 //  cep         : req.body.cep,
-                setor     : req.body.setor,
+                setor     : req.body.descricao,
                 
                                
             }).then(function(){

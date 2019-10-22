@@ -2,7 +2,7 @@
 
 const Sequelize = require ('sequelize');
 
-const sequelize = new Sequelize('ficr','root','123456',{
+const sequelize = new Sequelize('ficr','root','',{
     host:"localhost",
     dialect:'mysql'
 })
